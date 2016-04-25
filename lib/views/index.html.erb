@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codebreaker</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+  <section class="welcome-section">
+    <h1 class="text-center"><a href="">Welcome to Codebreaker</a></h1>
+  </section>
+  <section class="end-game-section hidden-elem">
+    <div>
+      <div id="congratulation">
+        <p class="end-game-message">Congratulations. You win!</p>
+      </div>
+      <div id="lose">
+        <p class="end-game-message">Game Over. You Lose!</p>
+      </div>
+    </div>
+    <div class="end-game-buttons">
+      <a href="/" class="btn btn-default try-button" name="again" role="button">
+        Again
+      </a>
+      <button type="button" class="btn btn-default try-button" name="save">
+        Save score
+      </button>
+    </div>
+  </section>
+  <section class="score-table-section hidden-elem">
+    <form class="player-name-field" id="save_score_from">
+      <div class="input-group">
+        <input type="text" name="user_name" class="form-control"
+               placeholder="Enter your name" required>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" name="save_player-score">Save</button>
+        </span>
+      </div>
+    </form>
+    <div id="score-table" class="hidden-elem">
+      <table id='scores' class="table table-hover">
+        <caption class="text-center">Top 10 players</caption>
+        <tr>
+          <th>Name</th>
+          <th>Success</th>
+          <th>Turns</th>
+        </tr>
+      </table>
+      <a href="/" class="btn btn-default" role="button">Play again</a>
+    </div>
+  </section>
+  <section class="code-section">
+    <div class="match-code-wrap">
+
+      <div class="code-blocks-wrap">
+        <div id='piemenu1' class="piemenu-item" data-wheelnav
+             data-wheelnav-slicepath='DonutSlice'
+             data-wheelnav-marker data-wheelnav-markerpath='DropMarker'
+             data-wheelnav-navangle='270'
+             data-wheelnav-cssmode
+             data-wheelnav-init>
+          <div data-wheelnav-navitemtext='1' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='2' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='3' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='4' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='5' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='6' onmouseup=''></div>
+        </div>
+        <div id='piemenu2' class="piemenu-item" data-wheelnav
+             data-wheelnav-slicepath='DonutSlice'
+             data-wheelnav-marker data-wheelnav-markerpath='DropMarker'
+             data-wheelnav-navangle='270'
+             data-wheelnav-cssmode
+             data-wheelnav-init>
+          <div data-wheelnav-navitemtext='1' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='2' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='3' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='4' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='5' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='6' onmouseup=''></div>
+        </div>
+        <div id='piemenu3' class="piemenu-item" data-wheelnav
+             data-wheelnav-slicepath='DonutSlice'
+             data-wheelnav-marker data-wheelnav-markerpath='DropMarker'
+             data-wheelnav-navangle='270'
+             data-wheelnav-cssmode
+             data-wheelnav-init>
+          <div data-wheelnav-navitemtext='1' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='2' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='3' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='4' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='5' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='6' onmouseup=''></div>
+        </div>
+        <div id='piemenu4' class="piemenu-item" data-wheelnav
+             data-wheelnav-slicepath='DonutSlice'
+             data-wheelnav-marker data-wheelnav-markerpath='DropMarker'
+             data-wheelnav-navangle='270'
+             data-wheelnav-cssmode
+             data-wheelnav-init>
+          <div data-wheelnav-navitemtext='1' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='2' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='3' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='4' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='5' onmouseup=''></div>
+          <div data-wheelnav-navitemtext='6' onmouseup=''></div>
+        </div>
+      </div>
+      <div class="code-buttons">
+        <button class="btn btn-default try-button" name="try">
+          Turn <span id="turns" class="badge">5</span>
+        </button>
+        <button class="btn btn-default hint-button" name="hint">
+          Hint <span id="hint-count" class="badge">1</span>
+        </button>
+        <select class="form-control hint-select" name="hint_option" id="hint_option">
+          <option value="hint 1">First number</option>
+          <option value="hint 2">Second number</option>
+          <option value="hint 3">Third number</option>
+          <option value="hint 4">Fourth number</option>
+        </select>
+        <span class="hint-answer">?</span>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/raphael.min.js"></script>
+<script src="js/raphael.icons.min.js"></script>
+<script src="js/wheelnav.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
